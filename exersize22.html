@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regstation form</title>
+    <style>
+        
+        body{
+            	background-size:cover;
+	background-repeat:no-repeat;
+	background-image:url('munna1.jpg');
+            
+        }
+        submit{
+            margin: 50% 50%;
+        }
+        th{
+            
+            width: 150px;
+            color: royalblue;
+        }
+        tr{
+            width: 525px;
+            color: aquamarine;
+            
+        }
+        td{
+            width: 524px;
+            color:red;
+        }
+        
+        h1{
+            font-family: cursive;
+        }
+    </style>
+    
+    
+    
+<script>
+    
+    
+    function validation(){
+    
+    var ui = document.myform.userid.value;
+    var pas = document.myform.passwoord.value;
+    var nam = document.myform.name.value;
+    var countrry = document.myform.country.value;
+    var zipcode = document.myform.zip.value;
+    var emailID=document.myform.email.value;
+    var sexx = document.myform.gender.value;
+    var languagee = document.myform.a.value;
+    var atpos=emailID.indexOf("@");  
+    var dotpos=emailID.lastIndexOf("."); 
+   var letters = (/^.*[A-Za-z]$/.test(nam));
+        
+    
+        if(ui == "")                       
+    { 
+  		alert("Please enter user id"); 
+      document.myform.userid.focus();
+        return false; }
+        
+        
+     if(pas == "")                       
+    { 
+  		alert("Please enter password"); 
+      document.myform.passwoord.focus();
+        return false; }
+        
+        
+        
+      
+        
+       if((nam == "") || (!letters) )
+
+   { 
+  		alert("Please enter ur name"); 
+    document.myform.name.focus();
+        return false; }
+           
+        
+        
+        
+        
+        
+        
+        
+              
+           if(countrry == "")                       
+    { 
+  		alert("Please select country name"); 
+      document.myform.country.focus();
+        return false; }
+        
+        
+        if(zipcode == "")                       
+    { 
+  		alert("Please enter ur zipcode"); 
+      document.myform.zip.focus();
+        return false; }
+        
+        
+
+    if (atpos < 1 || ( dotpos - atpos < 2 ))
+	{  
+  		alert("Please enter a valid e-mail");  
+        document.myform.email.focus();
+  		return false;  
+  	}  
+	  
+        
+        
+        
+        
+    if(sexx == "")                       
+    { 
+  		alert("Please select ur gender"); 
+      document.myform.gender.focus();
+        return false; }        
+        
+            if(languagee == "")                       
+    { 
+  		alert("Please enter ur language"); 
+      document.myform.a.focus();
+        return false; }
+        
+        
+           return true;
+    }
+    
+    
+    
+    </script>
+    
+    
+    
+ 
+    
+</head>
+<h1>Contract Us</h1>
+
+
+<body>
+<form name="myform" method="post" action="/action_page.php" onsubmit="return validation()">
+<table>
+   
+   
+   <tr>
+    <th>User id:</th>
+    <td> <input type="text" name="userid" maxlength="12" pattern=".{5,12}"  id="userid"  ></td> </tr>
+    
+     
+      
+        <tr>
+    <th>Password:</th>
+    <td> <input type="text" name="passwoord"   pattern=".{7,12}"  ></td> </tr>
+    
+     
+      
+        <tr>
+    <th>Name:</th>
+    <td> <input type="text" name="name"  id="name" title="Alphabets only"  ></td> </tr>
+    
+     
+      
+        <tr>
+    <th>Address:</th>
+    <td> <input type="text" name="address"  id="address"  ></td> </tr>
+    
+     
+      
+        <tr>
+    <th>Country</th>
+    <td> 
+        
+            <select id="country" name="country" class="form-control" required>
+                <option value="select country">Select Country</option>
+                <option value="Åland Islands">Åland Islands</option>
+                <option value="Albania">Albania</option>
+                <option value="Algeria">Algeria</option>
+                <option value="American Samoa">American Samoa</option>
+                <option value="Andorra">Andorra</option>
+                <option value="Angola">Angola</option>
+                <option value="Anguilla">Anguilla</option>
+                <option value="Antarctica">Antarctica</option>
+                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Aruba">Aruba</option>
+                
+    </select>
+                </td> </tr>
+    
+     
+         <tr>
+    <th>Zip Code</th>
+    <td> <input type="text" name="zip" min="5" max="12"  id="zip" pattern="[0-9]{1,}"  ></td> </tr>
+     
+      
+        <tr>
+    <th>Email:</th>
+    <td> <input type="text" name="email" min="5" max="12"  id="email" ></td> </tr>
+    
+     
+ <tr><th>Sex:</th>   <td>
+     <input type="radio" value="Male" name="gender"  > Male 
+    <input type="radio" value="Female" name="gender"> Female   </td></tr>
+    
+   <tr> <th>Language:</th>
+    <td><input type="checkbox" name="a" id="lg" value="English"> English 
+    
+    <input type="checkbox" name="a" id="lg" value="non English"> Non English </td></tr>
+     
+    <tr><th><label>About:</label></th>  
+              
+        <td><textarea name="about" cols="38" rows="5"></textarea></td>  
+    </tr>
+        
+          
+        <tr>
+    <th></th>
+    <td> <input type="submit" name="submit"  id="submit"  > </td> </tr>
+    
+     
+      
+       
+
+          
+           
+            
+             
+              
+               
+                
+                  
+    </table>
+    
+</body>
+</html>
